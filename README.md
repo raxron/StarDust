@@ -6,5 +6,3 @@
 
 # Team Members
 - Rachel Xia; Jenny Bui; Sebin Lee; Sierra Laurent
-
-- 
