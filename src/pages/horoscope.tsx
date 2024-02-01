@@ -1,3 +1,5 @@
+import { DailyDataProps } from "../../typing";
+
 export const getStaticProps = async() => {
     const url = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=taurus&day=TODAY`;
     const response = await fetch(url);
