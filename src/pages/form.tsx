@@ -4,15 +4,13 @@ import ZodiacForm from "./components/ZodiacForm";
 import Aztro from "./components/Aztro";
 import Navbar from "./components/navbar/navbar";
 
-const Home = () => {
+const Form = () => {
   return (
     <>
       <Navbar />
-      <Link href="/horoscope">Horoscope</Link>
-      <Link href="/form">Form</Link>
-      <Carousel />
+      <ZodiacForm />
     </>
   );
 };
 
-export default Home;
+export default Form;
