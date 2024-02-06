@@ -14,4 +14,5 @@ interface HoroscopeType {
   export interface ZodiacSign {
     id: number;
     name: string;
+    summary: string;
   }
