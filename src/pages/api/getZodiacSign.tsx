@@ -3,7 +3,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 type Data = {
   date: string;
   horoscope_data: string;
-
 };
 
 export default async function handler(
@@ -13,7 +12,14 @@ export default async function handler(
   try {
     const { zodiacSign } = req.query;
 
-    const url = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${encodeURIComponent(zodiacSign)}&day=TODAY`;
+    if (typeof zodiacSign !== 'string') {
+
+      console.log(zodiacSign);
+    }
+
+    const url = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${encodeURIComponent(
+      zodiacSign
+    )}&day=TODAY`;
 
     const response = await fetch(url);
 
@@ -22,6 +28,5 @@ export default async function handler(
     return res.status(200).json(data);
   } catch (error) {
     console.error(error);
- 
   }
 }

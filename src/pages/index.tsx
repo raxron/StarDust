@@ -6,12 +6,10 @@ import Navbar from "./components/navbar/navbar";
 
 const Home = () => {
   return (
-    <>
+    <div className="bg-dark">
       <Navbar />
-      <Link href="/horoscope">Horoscope</Link>
-      <Link href="/form">Form</Link>
       <Carousel />
-    </>
+    </div>
   );
 };
 

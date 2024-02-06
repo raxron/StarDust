@@ -11,7 +11,7 @@ export default function Navbar() {
       </Link>
 
       <div >
-        <a href="/" >
+        <a href="/form" >
           Your Horoscopes
         </a>
       </div>
