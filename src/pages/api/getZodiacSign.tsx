@@ -9,13 +9,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  const zodiacSign: string = (req.query?.zodiacSign as string) || '';
+  
   try {
-    const { zodiacSign } = req.query;
-
-    if (typeof zodiacSign !== 'string') {
-
-      console.log(zodiacSign);
-    }
 
     const url = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${encodeURIComponent(
       zodiacSign

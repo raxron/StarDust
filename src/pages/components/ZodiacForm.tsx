@@ -16,6 +16,7 @@ const ZodiacForm = () => {
       const { zodiacSign } = response.data;
 
       setZodiacSign(zodiacSign);
+      
       const horoscopeResponse = await axios.post(
         `https://aztro.sameerkumar.website?sign=${zodiacSign.toLowerCase()}&day=today`
       );
@@ -39,7 +40,7 @@ const ZodiacForm = () => {
 
   const submitSign = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    zodiacSign: string
+    zodiacSign: any
   ) => {
     event.preventDefault();
     router.push({
