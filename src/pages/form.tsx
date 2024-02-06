@@ -7,7 +7,7 @@ import Navbar from "./components/navbar/navbar";
 const Form = () => {
   return (
     <>
-      <Navbar />
+
       <ZodiacForm />
     </>
   );

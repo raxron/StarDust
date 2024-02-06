@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import { useRouter } from "next/router";
+import Link from "next/link";
 const ZodiacForm = () => {
   const [formData, setFormData] = useState({ month: "", date: "" });
   const [zodiacSign, setZodiacSign] = useState("");
@@ -15,7 +16,6 @@ const ZodiacForm = () => {
       const { zodiacSign } = response.data;
 
       setZodiacSign(zodiacSign);
-
       const horoscopeResponse = await axios.post(
         `https://aztro.sameerkumar.website?sign=${zodiacSign.toLowerCase()}&day=today`
       );
@@ -33,6 +33,21 @@ const ZodiacForm = () => {
     } catch (error) {
       console.error("Error fetching zodiac sign or horoscope:", error);
     }
+  };
+
+  const router = useRouter();
+
+  const submitSign = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    zodiacSign: string
+  ) => {
+    event.preventDefault();
+    router.push({
+      pathname: '/horoscope',
+      query: {
+        zodiacSign: zodiacSign.toLowerCase(),
+      }
+    });
   };
 
   return (
@@ -56,13 +71,13 @@ const ZodiacForm = () => {
       </label>
       <br />
       <button onClick={handleSubmit}>Submit</button>
-      {zodiacSign && <p>Your zodiac sign is: {zodiacSign}</p>}
-      {description && (
+      {zodiacSign &&
         <div>
-          <h2>Daily Horoscope</h2>
-          <p>Description: {description}</p>
-        </div>
-      )}
+          <p>Your zodiac sign is: {zodiacSign}</p>
+          <button onClick={(e) => submitSign(e, zodiacSign)}>Read More</button>
+
+        </div>}
+
     </div>
   );
 };
