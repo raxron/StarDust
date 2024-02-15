@@ -2,62 +2,62 @@
     "signs":[
         {   
             "id":1,
-            "name":"aquarius",
+            "name":"Aquarius",
             "summary":"sss"
         },
         {   
             "id":2,
-            "name":"pisces",
+            "name":"Pisces",
             "summary":"sss"
         },
         {   
             "id":3,
-            "name":"aries",
+            "name":"Aries",
             "summary":"sss"
         },
         {   
             "id":4,
-            "name":"taurus",
+            "name":"Taurus",
             "summary":"sss"
         },
         {   
             "id":5,
-            "name":"gemini",
+            "name":"Gemini",
             "summary":"sss"
         },
         {   
             "id":6,
-            "name":"cancer",
+            "name":"Cancer",
             "summary":"sss"
         },
         {   
             "id":7,
-            "name":"leo",
+            "name":"Leo",
             "summary":"sss"
         },
         {   
             "id":8,
-            "name":"virgo",
+            "name":"Virgo",
             "summary":"sss"
         },
         {   
             "id":9,
-            "name":"libra",
+            "name":"Libra",
             "summary":"sss"
         },
         {   
             "id":10,
-            "name":"scorpio",
+            "name":"Scorpio",
             "summary":"sss"
         },
         {   
             "id":11,
-            "name":"sagittarius",
+            "name":"Sagittarius",
             "summary":"sss"
         },
         {   
             "id":12,
-            "name":"capricon",
+            "name":"Capricorn",
             "summary":"sss"
         }
     ]
