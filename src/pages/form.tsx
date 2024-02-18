@@ -7,8 +7,10 @@ import Navbar from "./components/navbar/navbar";
 const Form = () => {
   return (
     <>
-
-      <ZodiacForm />
+      <div className="bg-dark">
+        <Navbar />
+        <ZodiacForm />
+      </div>
     </>
   );
 };
