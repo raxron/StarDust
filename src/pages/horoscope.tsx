@@ -1,6 +1,7 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Navbar from "./components/navbar/navbar";
 
 type HoroscopeData = {
   date: string;
@@ -14,13 +15,14 @@ const Horoscope: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-
-   
-      
       try {
         if (zodiacSign) {
-          const signToFetch = Array.isArray(zodiacSign) ? zodiacSign[0] : zodiacSign;
-          const response = await axios.get(`/api/getZodiacSign?zodiacSign=${encodeURIComponent(signToFetch)}`);
+          const signToFetch = Array.isArray(zodiacSign)
+            ? zodiacSign[0]
+            : zodiacSign;
+          const response = await axios.get(
+            `/api/getZodiacSign?zodiacSign=${encodeURIComponent(signToFetch)}`
+          );
           setData(response.data.data);
           console.log(response.data.data);
         }
@@ -29,19 +31,52 @@ const Horoscope: React.FC = () => {
       }
     };
     fetchData();
-    
-    
   }, [zodiacSign]);
 
   return (
-    <div>
+    <div className="bg-dark">
+      <Navbar />
       {data ? (
         <>
-        <h1>Hello</h1>
-       
-            <div><h3>{data.date}</h3>
-            <p>{data.horoscope_data}</p></div>
-         
+          <div className="min-h-screen flex items-center justify-center gap-16">
+            <div
+              style={{
+                backgroundColor: "#CDCBC0",
+                width: "300px",
+                height: "500px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "35px",
+              }}
+            >
+              <div
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.3)",
+                  width: "280px",
+                  height: "480px",
+                  border: "2px dotted black",
+                  borderRadius: "30px",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "15px",
+                }}
+              >
+                <h3
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "1.5em",
+                    marginBottom: "10px",
+                  }}
+                >
+                  {data.date}
+                </h3>
+                <p>{data.horoscope_data}</p>
+              </div>
+            </div>
+          </div>
         </>
       ) : (
         <p>Loading...</p>
