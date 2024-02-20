@@ -38,7 +38,7 @@ const Horoscope: React.FC = () => {
     <div className="bg-dark font-josefine">
       <Navbar />
       <div className="min-h-screen flex items-center justify-center gap-16">
-        <Image src={`/assets/characters/${zodiacSign}.png`} alt="zodiac sign background" width={500} height={500} className="opacity-20 absolute w-96 h-auto"/>
+        <Image src={`/assets/signsDark/${zodiacSign}.png`} alt="zodiac sign background" width={500} height={500} className="opacity-20 absolute w-96 h-auto"/>
         <div
           className="flex items-center justify-center w-2/4 flex-col text-beige gap-8" >
           {data ? (
