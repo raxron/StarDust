@@ -52,9 +52,8 @@ describe('Home Page', () => {
      cy.get('.absolute > div:nth-child(12)').click();
      cy.get('.text-3xl').contains('Capricorn')
     
-    // have the footer present
-     cy.get('img[src="/assets/logo/wordmark.svg"]').should('exist')
-     cy.get('h1').should('exist').contains('Copyright © 2024 – All rights Reserved')
-          
+    // have footer present
+    cy.get('img[src="/assets/logo/wordmark.png"]').should('be.visible')
+    
   })
 })

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Card1 from "../../../public/assets/cards/1.png";
-import Card2 from "../../../public/assets/cards/2.png";
-import Card3 from "../../../public/assets/cards/3.png";
-import Card4 from "../../../public/assets/cards/4.png";
+import Card1 from "../../../public/assets/cards/TAURUS.png";
+import Card2 from "../../../public/assets/cards/ARIES.png";
+import Card3 from "../../../public/assets/cards/CANCER.png";
+import Card4 from "../../../public/assets/cards/CAPRICORN.png";
 
 const ZodiacForm = () => {
   const [formData, setFormData] = useState({ month: "", date: "" });
@@ -59,7 +59,7 @@ const ZodiacForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center gap-16 ">
+    <div className="min-h-screen flex items-center justify-center gap-16">
       <Image
         src={Card1}
         width={140}

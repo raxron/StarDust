@@ -3,17 +3,17 @@ describe('Home Page', () => {
       console.log("Starting home page test")
   })
 
-  it('should load the home page', ()=>{
-      //visit home page
-      cy.visit('http://localhost:3000');
+  it('should load the home page', () => {
+    cy.visit('http://localhost:3000');
+  });
 
-      // have navbar present
-     cy.get('img[src="/assets/logo/stardustLogo.svg"]').should('be.visible')
+  it('should have a navbar', () => {
+    cy.get('img[src="/assets/logo/stardustLogo.svg"]').should('be.visible')
      cy.get('a').should('exist').contains('Your Horoscopes')
+  });
 
-     //have carousel present
-     //include all zodiacs
-   
+  it('should have the carousel present', ()=>{
+  
      cy.get('h1').should('exist').contains('Click to see each zodiac sign')
 
      cy.get('.absolute > div:first-child').click();
@@ -52,9 +52,11 @@ describe('Home Page', () => {
      cy.get('.absolute > div:nth-child(12)').click();
      cy.get('.text-3xl').contains('Capricorn')
     
-    // have the footer present
-     cy.get('img[src="/assets/logo/wordmark.svg"]').should('exist')
-     cy.get('h1').should('exist').contains('Copyright © 2024 – All rights Reserved')
-          
   })
+
+  it('should have a footer', () => {
+    cy.get('img[src="/assets/logo/wordmark.png"]').should('exist');
+    cy.get('h1').should('exist').contains('Copyright © 2024 – All rights Reserved')
+  });
+  
 })

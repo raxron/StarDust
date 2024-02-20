@@ -59,7 +59,7 @@ const ZodiacForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center gap-16 ">
+    <div className="min-h-screen flex items-center justify-center gap-16">
       <Image
         src={Card1}
         width={140}

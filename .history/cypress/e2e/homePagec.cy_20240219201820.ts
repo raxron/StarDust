@@ -53,8 +53,9 @@ describe('Home Page', () => {
      cy.get('.text-3xl').contains('Capricorn')
     
     // have the footer present
-     cy.get('img[src="/assets/logo/wordmark.svg"]').should('exist')
-     cy.get('h1').should('exist').contains('Copyright © 2024 – All rights Reserved')
+    cy.get('footer').scrollIntoView();
+    cy.get('img[src="/assets/logo/wordmark.png"]').should('exist')
+    cy.get('h1').should('exist').contains('Copyright © 2024 – All rights Reserved')
           
   })
 })
