@@ -7,7 +7,7 @@ import Footer from '@/pages/components/footer'
 const Form = () => {
   return (
     <>
-      <div className="bg-dark">
+      <div className="bg-dark font-josefine">
         <Navbar />
         <ZodiacForm />
         <Footer />

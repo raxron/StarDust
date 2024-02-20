@@ -85,9 +85,12 @@ const ZodiacForm = () => {
       {!showResult ? (
         <div
           style={{
-            backgroundColor: "#CDCBC0",
-            width: "300px",
-            height: "500px",
+            backgroundImage: 'url(/assets/card.png)',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            width: "350px",
+            height: "550px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -95,67 +98,56 @@ const ZodiacForm = () => {
           }}
         >
           <div
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.3)",
-              width: "280px",
-              height: "480px",
-              border: "2px dotted black",
-              borderRadius: "30px",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
+            className="flex flex-col items-center justify-center"
+
           >
             <p
-              style={{
-                fontSize: "1.4em",
-                fontWeight: "bold",
-                marginBottom: "30px",
-              }}
+              className="font-bold mb-12 text-xl text-center"
+
             >
               Tell Us Your Birthday
             </p>
-            <label>
-              Month
-              <br />
-              <input
-                type="text"
-                value={formData.month}
-                style={{
-                  backgroundColor: "#CDCBC0",
-                  border: "1px dotted black",
-                  borderRadius: "15px",
-                  width: "220px",
-                  padding: "5px",
-                }}
-                onChange={(e) =>
-                  setFormData({ ...formData, month: e.target.value })
-                }
-              />
-            </label>
+
+            <input
+              className="placeholder-dark text-center"
+              placeholder="Month"
+              required
+              type="text"
+              value={formData.month}
+              style={{
+                backgroundColor: "#CDCBC0",
+                border: "1px dotted black",
+                borderRadius: "15px",
+                width: "220px",
+                padding: "5px",
+              }}
+              onChange={(e) =>
+                setFormData({ ...formData, month: e.target.value })
+              }
+            />
             <br />
-            <label>
-              Date
-              <br />
-              <input
-                type="text"
-                style={{
-                  backgroundColor: "#CDCBC0",
-                  border: "1px dotted black",
-                  borderRadius: "15px",
-                  width: "220px",
-                  padding: "5px",
-                }}
-                value={formData.date}
-                onChange={(e) =>
-                  setFormData({ ...formData, date: e.target.value })
-                }
-              />
-            </label>
+
+            <input
+              className="placeholder-dark text-center"
+              placeholder="Date"
+              required
+              type="text"
+              style={{
+                backgroundColor: "#CDCBC0",
+                border: "1px dotted black",
+                borderRadius: "15px",
+                width: "220px",
+                padding: "5px",
+              }}
+              value={formData.date}
+              onChange={(e) =>
+                setFormData({ ...formData, date: e.target.value })
+              }
+            />
             <br />
             <button
               onClick={handleSubmit}
+              className="flex items-center justify-center gap-1"
               style={{
                 backgroundColor: "#271F4F",
                 color: "white",
@@ -165,16 +157,21 @@ const ZodiacForm = () => {
                 width: "220px",
               }}
             >
-              Find Your Star
+              <Image src={"/assets/star.png"} width={100} height={100} alt="start" className="w-6 h-auto"/>
+              <p>Find Your Star</p>
+              <Image src={"/assets/star.png"} width={100} height={100} alt="start" className="w-6 h-auto"/>
             </button>
           </div>
         </div>
       ) : (
         <div
           style={{
-            backgroundColor: "#CDCBC0",
-            width: "300px",
-            height: "500px",
+            backgroundImage: 'url(/assets/card.png)',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            width: "350px",
+            height: "550px",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -183,10 +180,8 @@ const ZodiacForm = () => {
         >
           <div
             style={{
-              backgroundColor: "rgba(255, 255, 255, 0.3)",
               width: "280px",
               height: "480px",
-              border: "2px dotted black",
               borderRadius: "30px",
               display: "flex",
               flexDirection: "column",
@@ -195,16 +190,13 @@ const ZodiacForm = () => {
               gap: "30px",
             }}
           >
-            <p
-              style={{
-                textAlign: "center",
-              }}
-            >
-              Your zodiac sign is <br />
-              <span style={{ fontWeight: "bold", fontSize: "1.5em" }}>
+            <div className="flex flex-col items-center gap-1">
+              <Image src={`/assets/signsDark/${zodiacSign}.png`} width={100} height={100} className="w-8 h-auto" alt="your zodiac sign" />
+              <p className="text-center font-bold text-2xl text-lightPurple">
                 {zodiacSign}
-              </span>
-            </p>
+              </p>
+            </div>
+
             <button
               onClick={(e) => submitSign(e, zodiacSign)}
               style={{
@@ -215,7 +207,7 @@ const ZodiacForm = () => {
                 cursor: "pointer",
               }}
             >
-              Read More
+              Daily Horoscope
             </button>
           </div>
         </div>

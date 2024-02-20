@@ -2,7 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./components/navbar/navbar";
-
+import { capitalizeFirstLetter } from "@/utils/capitalLetter";
+import Image from "next/image";
 type HoroscopeData = {
   date: string;
   horoscope_data: string;
@@ -33,54 +34,37 @@ const Horoscope: React.FC = () => {
     fetchData();
   }, [zodiacSign]);
 
+  const signToFetch = Array.isArray(zodiacSign) ? zodiacSign[0] : zodiacSign;
+  const capitalizedString = capitalizeFirstLetter(signToFetch || "");
+
   return (
-    <div className="bg-dark">
+    <div className="bg-dark font-josefine">
       <Navbar />
-      {data ? (
-        <>
-          <div className="min-h-screen flex items-center justify-center gap-16">
-            <div
-              style={{
-                backgroundColor: "#CDCBC0",
-                width: "300px",
-                height: "500px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: "35px",
-              }}
-            >
-              <div
-                style={{
-                  backgroundColor: "rgba(255, 255, 255, 0.3)",
-                  width: "280px",
-                  height: "480px",
-                  border: "2px dotted black",
-                  borderRadius: "30px",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "15px",
-                }}
-              >
-                <h3
-                  style={{
-                    fontWeight: "bold",
-                    fontSize: "1.5em",
-                    marginBottom: "10px",
-                  }}
-                >
+      <div className="min-h-screen flex items-center justify-center gap-16">
+        <Image src={`/assets/signsDark/${zodiacSign}.png`} alt="zodiac sign background" width={500} height={500} className="opacity-20 absolute w-96 h-auto"/>
+        <div
+          className="flex items-center justify-center w-2/4 flex-col text-beige gap-8" >
+          {data ? (
+
+            <>
+              <div className="flex flex-col justify-center items-center gap-2">
+                <h3 className="text-lg">
                   {data.date}
                 </h3>
-                <p>{data.horoscope_data}</p>
+                <h2 className="text-4xl font-bold">
+                  {capitalizedString} Horoscope
+                </h2>
               </div>
-            </div>
-          </div>
-        </>
-      ) : (
-        <p>Loading...</p>
-      )}
+              <p>{data.horoscope_data}</p>
+            </>
+
+          ) : (
+            <p>Loading...</p>
+          )}
+
+        </div>
+      </div>
+
     </div>
   );
 };

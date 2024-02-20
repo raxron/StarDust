@@ -7,14 +7,21 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors:{
-      dark:'#171233',
-      purple:'#271f4f',
-      lightPurple:'#3b3170',
-      yellow:'#f5df60',
-      beige:'#cdcbc0',
-      white:'#fff'
+    extend:{
+      colors:{
+        dark:'#171233',
+        purple:'#271f4f',
+        lightPurple:'#3b3170',
+        yellow:'#f5df60',
+        beige:'#cdcbc0',
+        white:'#fff'
+      },
+      fontFamily:{
+        josefine:["Josefine","sans-serif"],
+        newYork:["NewYork","sans-serif"]
+      }
     }
+  
   },
   plugins: [],
 }

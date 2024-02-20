@@ -17,6 +17,16 @@
   }
 }
 
+@font-face {
+  font-family: "Josefine";
+  src: url("/fonts/JosefinSans-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "NewYork";
+  src: url("/fonts/NewYork\ PERSONAL\ USE.otf");
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
