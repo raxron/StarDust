@@ -1,9 +1,9 @@
-interface HoroscopeType {
+export interface HoroscopeType {
     date: string;
     horoscope_data: string;
   }
   
-  interface DailyDataProps {
+ export interface DailyDataProps {
     dailyData: {
       data: HoroscopeType;
       status: number;
@@ -16,3 +16,18 @@ interface HoroscopeType {
     name: string;
     summary: string;
   }
+
+  export interface HoroscopeData {
+    date: string;
+    horoscope_data: string;
+  };
+
+  interface ZodiacInfo {
+    [key: string]: {
+        date: string;
+        personality: string;
+    };
+}
+interface ZodiacInfoProps {
+    infoSign: string;
+}

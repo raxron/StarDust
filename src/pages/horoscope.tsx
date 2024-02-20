@@ -4,10 +4,7 @@ import axios from "axios";
 import Navbar from "./components/navbar/navbar";
 import { capitalizeFirstLetter } from "@/utils/capitalLetter";
 import Image from "next/image";
-type HoroscopeData = {
-  date: string;
-  horoscope_data: string;
-};
+import { HoroscopeData } from "../../typing";
 
 const Horoscope: React.FC = () => {
   const router = useRouter();

@@ -191,7 +191,7 @@ const ZodiacForm = () => {
             }}
           >
             <div className="flex flex-col items-center gap-1">
-              <Image src={`/assets/signsDark/${zodiacSign}.png`} width={100} height={100} className="w-8 h-auto" alt="your zodiac sign" />
+              <Image src={`/assets/signsDark/${zodiacSign.toLowerCase()}.png`} width={100} height={100} className="w-8 h-auto" alt="your zodiac sign" />
               <p className="text-center font-bold text-2xl text-lightPurple">
                 {zodiacSign}
               </p>

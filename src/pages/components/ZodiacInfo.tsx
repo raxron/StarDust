@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
-interface ZodiacInfo {
-    [key: string]: {
-        date: string;
-        personality: string;
-    };
-}
-interface ZodiacInfoProps {
-    infoSign: string;
-}
+import { ZodiacInfo } from "../../../typing";
+import { ZodiacInfoProps } from "../../../typing";
 
 const ZodiacInfo: React.FC<ZodiacInfoProps> = ({ infoSign }) => {
     const [info, setInfo] = useState<ZodiacInfo>({});
