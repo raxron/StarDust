@@ -1,10 +1,12 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createRef } from "react";
 import axios from "axios";
 import Navbar from "./components/navbar/navbar";
 import { capitalizeFirstLetter } from "@/utils/capitalLetter";
 import Image from "next/image";
 import { HoroscopeData } from "../../typing";
+import lottie from "lottie-web";
+
 
 const Horoscope: React.FC = () => {
   const router = useRouter();
@@ -34,6 +36,22 @@ const Horoscope: React.FC = () => {
   const signToFetch = Array.isArray(zodiacSign) ? zodiacSign[0] : zodiacSign;
   const capitalizedString = capitalizeFirstLetter(signToFetch || "");
 
+const animationContainer = createRef<HTMLDivElement>();
+
+useEffect(() => {
+  const anim = lottie.loadAnimation({
+    container: animationContainer.current!,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "/assets/animations/datas.json",
+  });
+
+  return () => anim.destroy();
+}, []);
+
+
+
   return (
     <div className="bg-dark font-josefine">
       <Navbar />
@@ -56,7 +74,7 @@ const Horoscope: React.FC = () => {
             </>
 
           ) : (
-            <p>Loading...</p>
+            <p ref={animationContainer}></p>
           )}
 
         </div>
