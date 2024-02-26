@@ -44,7 +44,7 @@ useEffect(() => {
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "/assets/animations/datas.json",
+    path: "/assets/animations/data.json",
   });
 
   return () => anim.destroy();
@@ -74,7 +74,7 @@ useEffect(() => {
             </>
 
           ) : (
-            <p ref={animationContainer}></p>
+            <p className="w-50" ref={animationContainer}></p>
           )}
 
         </div>
