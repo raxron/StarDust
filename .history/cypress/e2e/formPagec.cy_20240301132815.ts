@@ -15,7 +15,7 @@ describe('Form Page', () => {
         cy.get('img[src="/assets/logo/wordmark.svg"]').should('exist')
         cy.get('h1').should('exist').contains('Copyright © 2024 – All rights Reserved')
 
-        // check if input forms are displayed
+        // check if input forms are avaliable
         cy.get('input[placeholder="Month"]').should('be.visible');
         cy.get('input[placeholder="Date"]').should('be.visible');
         cy.get('button').contains('Find Your Star').should('be.visible');
