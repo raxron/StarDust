@@ -1,19 +1,28 @@
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/router"; // Import useRouter
 import Data from "../../../data/carouselData.json";
 import { ZodiacSign } from "../../../typing";
 import ZodiacInfo from "./ZodiacInfo";
 
 export default function Carousel() {
+  const router = useRouter(); // Initialize useRouter
   const [zodiac, setZodiac] = useState<ZodiacSign[]>(Data.signs);
   const [clickedSign, setClickedSign] = useState("unclicked");
   const [clickedSummary, setClickedSummary] = useState("none");
   const [showCompatibilityButton, setShowCompatibilityButton] = useState(false);
+
   const links = "/assets/signs/";
+
+  // Function to handle navigation to the compatibility page
+  const handleCompatibilityClick = () => {
+    // Pass the clickedSign as a query parameter to the compatibility page
+    router.push(`/compatibility?sign=${clickedSign}`);
+  };
 
   return (
     <div
-      className="flex flex-col items-center justify-center font-josefine"
+      className="flex flex-col items-center justify-center font-josefine text-center"
       style={{
         minHeight: "80vh",
       }}
@@ -32,7 +41,10 @@ export default function Carousel() {
             </div>
             <ZodiacInfo infoSign={clickedSign} />
             {showCompatibilityButton && (
-              <button className="bg-lightPurple text-white py-2 px-4 rounded-md mt-4">
+              <button
+                onClick={handleCompatibilityClick}
+                className="bg-lightPurple text-white py-2 px-4 rounded-md mt-4"
+              >
                 Compatibility
               </button>
             )}
