@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer";
+import Arieschart from "./components/Charts/Aries";
 
 const Compatibility = () => {
   const router = useRouter();
@@ -10,7 +11,7 @@ const Compatibility = () => {
   const getCompatibilityContent = (sign: string) => {
     switch (sign) {
       case "Aries":
-        return <div>Compatibility details for Aries</div>;
+        return <Arieschart />;
       case "Aquarius":
         return <div>Compatibility details for Aquarius</div>;
       case "Pisces":

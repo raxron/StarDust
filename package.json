@@ -9,21 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/x-charts": "^6.19.5",
     "@splinetool/loader": "^1.0.55",
     "@splinetool/react-spline": "^2.2.6",
     "@types/cors": "^2.8.17",
     "@types/dat.gui": "^0.7.12",
     "@types/three": "^0.162.0",
     "axios": "^1.6.7",
+    "chart.js": "^4.4.2",
     "cors": "^2.8.5",
     "dat.gui": "^0.7.9",
     "lottie-web": "^5.12.2",
     "next": "14.0.4",
     "react": "^18",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "three": "^0.162.0"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.9.41",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
