@@ -3,6 +3,11 @@ import { useRouter } from "next/router";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer";
 import Arieschart from "./components/Charts/Aries";
+import Aquariuschart from "./components/Charts/Aquarius";
+import Pisceschart from "./components/Charts/Pisces";
+import Geminichart from "./components/Charts/Gemini";
+import Tauruschart from "./components/Charts/Taurus";
+import Cancerchart from "./components/Charts/Cancer";
 
 const Compatibility = () => {
   const router = useRouter();
@@ -13,15 +18,15 @@ const Compatibility = () => {
       case "Aries":
         return <Arieschart />;
       case "Aquarius":
-        return <div>Compatibility details for Aquarius</div>;
+        return <Aquariuschart />
       case "Pisces":
-        return <div>Compatibility details for Pisces</div>;
+        return <Pisceschart />
       case "Gemini":
-        return <div>Compatibility details for Gemini</div>;
+        return <Geminichart />
       case "Taurus":
-        return <div>Compatibility details for Taurus</div>;
+        return <Tauruschart />
       case "Cancer":
-        return <div>Compatibility details for Cancer</div>;
+        return <Cancerchart />
       case "Virgo":
         return <div>Compatibility details for Virgo</div>;
       case "Leo":

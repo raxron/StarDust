@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Chart, { ChartConfiguration } from "chart.js/auto";
 
-const Arieschart = () => {
+const Pisceschart = () => {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstanceRef = useRef<Chart>();
 
@@ -15,11 +15,11 @@ const Arieschart = () => {
     const config: ChartConfiguration<"bar"> = {
       type: "bar",
       data: {
-        labels: ["Leo", "Sagittarius", "Libra", "Gemini", "Aquarius", "Pices"],
+        labels: ["Cancer", "Scorpio", "Capricon", "Virgo", "Libra", "Taurus"],
         datasets: [
           {
-            label: "Compatibility with Aries",
-            data: [97, 93, 85, 83, 78, 67],
+            label: "Compatibility with Pisces",
+            data: [99, 97, 88, 88, 88, 85],
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(255, 159, 64, 0.2)",
@@ -90,4 +90,4 @@ const Arieschart = () => {
   );
 };
 
-export default Arieschart;
+export default Pisceschart;
