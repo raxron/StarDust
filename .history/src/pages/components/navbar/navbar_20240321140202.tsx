@@ -8,7 +8,7 @@ export default function Navbar() {
       <Link href="/">
         <Image src="/assets/logo/stardustLogo.svg" className='hover:scale-110 transition-transform' width={100} height={100} alt="Logo" />
       </Link>
-      <div className='hover:scale-110 transition-transform'>
+      <div >
         <a href="/form" >
           Your Horoscopes
         </a>
