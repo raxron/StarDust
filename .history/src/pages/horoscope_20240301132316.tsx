@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState, createRef } from "react";
 import axios from "axios";
 import Navbar from "./components/navbar/navbar";
-import Footer from "./components/footer";
 import { capitalizeFirstLetter } from "@/utils/capitalLetter";
 import Image from "next/image";
 import { HoroscopeData } from "../../typing";
@@ -80,7 +79,7 @@ useEffect(() => {
 
         </div>
       </div>
-      <Footer />
+
     </div>
   );
 };

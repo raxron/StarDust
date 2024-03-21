@@ -60,7 +60,6 @@ const Compatibility = () => {
           {getCompatibilityContent(sign as string)}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

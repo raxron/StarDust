@@ -10,10 +10,6 @@ import Tauruschart from "./components/Charts/Taurus";
 import Cancerchart from "./components/Charts/Cancer";
 import Capricornchart from "./components/Charts/Capricorn";
 import VirgoChart from "./components/Charts/Virgo";
-import LeoChart from "./components/Charts/Leo";
-import LibraChart from "./components/Charts/Libra";
-import ScorpioChart from "./components/Charts/Scorpio";
-import SagittariusChart from "./components/Charts/Sagittarius";
 
 const Compatibility = () => {
   const router = useRouter();
@@ -36,13 +32,13 @@ const Compatibility = () => {
       case "Virgo":
         return <VirgoChart />
       case "Leo":
-        return <LeoChart />
+        return <div>Compatibility details for Leo</div>;
       case "Libra":
-        return <LibraChart />
+        return <div>Compatibility details for Libra</div>;
       case "Scorpio":
-        return <ScorpioChart />
+        return <div>Compatibility details for Scorpio</div>;
       case "Sagittarius":
-        return <SagittariusChart />
+        return <div>Compatibility details for Sagittarius</div>;
       case "Capricorn":
         return <Capricornchart />
 
@@ -60,7 +56,6 @@ const Compatibility = () => {
           {getCompatibilityContent(sign as string)}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

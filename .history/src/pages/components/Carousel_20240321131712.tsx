@@ -90,7 +90,7 @@ export default function Carousel() {
               alt={`Zodiac Sign ${sign.name}`}
               width="100"
               height="100"
-              className="w-8 h-auto hover:scale-110 transition-transform"
+              className="w-8 h-auto"
             />
           </div>
         ))}
