@@ -59,8 +59,9 @@ const ZodiacForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center gap-16  ">
+    <div className="min-h-screen flex items-center justify-center gap-16 overflow-hidden ">
       <Image
+        className="w-80 h-auto opacity-50"
         src={Card1}
         width={140}
         height={250}
@@ -68,10 +69,11 @@ const ZodiacForm = () => {
         style={{
           transform: "rotate(-30deg)",
           marginTop: "300px",
-          opacity: "0.8",
+
         }}
       />
       <Image
+        className="w-80 h-auto  opacity-50"
         src={Card2}
         width={160}
         height={290}
@@ -79,7 +81,6 @@ const ZodiacForm = () => {
         style={{
           transform: "rotate(-15deg)",
           marginTop: "80px",
-          opacity: "0.8",
         }}
       />
       {!showResult ? (
@@ -98,68 +99,71 @@ const ZodiacForm = () => {
           }}
         >
           <div
-            className="flex flex-col items-center justify-center"
-
+            className="flex flex-col items-center justify-center gap-12"
           >
             <p
-              className="font-bold mb-12 text-xl text-center"
+              className="font-bold text-2xl text-center"
 
             >
               Tell Us Your Birthday
             </p>
+            <div
+             className="flex flex-col"
+            >
+              <input
+                className="placeholder-dark text-center w-60 "
+                placeholder="Month"
+                required
+                type="text"
+                value={formData.month}
+                style={{
+                  backgroundColor: "#CDCBC0",
+                  border: "1px dotted black",
+                  borderRadius: "15px",
 
-            <input
-              className="placeholder-dark text-center"
-              placeholder="Month"
-              required
-              type="text"
-              value={formData.month}
-              style={{
-                backgroundColor: "#CDCBC0",
-                border: "1px dotted black",
-                borderRadius: "15px",
-                width: "220px",
-                padding: "5px",
-              }}
-              onChange={(e) =>
-                setFormData({ ...formData, month: e.target.value })
-              }
-            />
-            <br />
+                  padding: "5px",
+                }}
+                onChange={(e) =>
+                  setFormData({ ...formData, month: e.target.value })
+                }
+              />
+              <br />
 
-            <input
-              className="placeholder-dark text-center"
-              placeholder="Date"
-              required
-              type="text"
-              style={{
-                backgroundColor: "#CDCBC0",
-                border: "1px dotted black",
-                borderRadius: "15px",
-                width: "220px",
-                padding: "5px",
-              }}
-              value={formData.date}
-              onChange={(e) =>
-                setFormData({ ...formData, date: e.target.value })
-              }
-            />
-            <br />
+              <input
+                className="placeholder-dark text-center w-60 "
+                placeholder="Date"
+                required
+                type="text"
+                style={{
+                  backgroundColor: "#CDCBC0",
+                  border: "1px dotted black",
+                  borderRadius: "15px",
+
+                  padding: "5px",
+                }}
+                value={formData.date}
+                onChange={(e) =>
+                  setFormData({ ...formData, date: e.target.value })
+                }
+              />
+            </div>
+
+
             <button
               onClick={handleSubmit}
-              className="flex items-center justify-center gap-1"
+              className="flex items-center justify-center gap-1 w-60 mx-10"
               style={{
                 backgroundColor: "#271F4F",
                 color: "white",
                 borderRadius: "50px",
                 padding: "10px 20px",
                 cursor: "pointer",
-                width: "220px",
+
               }}
             >
-              <Image src={"/assets/star.png"} width={100} height={100} alt="start" className="w-6 h-auto"/>
+              <Image src={"/assets/star.png"} width={100} height={100} alt="start" className="w-6 h-auto" />
               <p>Find Your Star</p>
-              <Image src={"/assets/star.png"} width={100} height={100} alt="start" className="w-6 h-auto"/>
+              <Image src={"/assets/star.png"} width={100} height={100} alt="start" className="w-6 h-auto" />
             </button>
           </div>
         </div>
@@ -213,6 +217,7 @@ const ZodiacForm = () => {
         </div>
       )}
       <Image
+        className="w-80 h-auto  opacity-50"
         src={Card3}
         width={160}
         height={290}
@@ -220,10 +225,10 @@ const ZodiacForm = () => {
         style={{
           transform: "rotate(15deg)",
           marginTop: "80px",
-          opacity: "0.8",
         }}
       />
       <Image
+        className="w-80 h-auto  opacity-50"
         src={Card4}
         width={140}
         height={250}
@@ -231,7 +236,6 @@ const ZodiacForm = () => {
         style={{
           transform: "rotate(30deg)",
           marginTop: "300px",
-          opacity: "0.8",
         }}
       />
     </div>
