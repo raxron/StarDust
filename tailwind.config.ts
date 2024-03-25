@@ -19,6 +19,12 @@ const config: Config = {
       fontFamily:{
         josefine:["Josefine","sans-serif"],
         newYork:["NewYork","sans-serif"]
+      },
+      width: {
+        '128': '36rem',
+      },
+      height: {
+        '128': '36rem',
       }
     }
   

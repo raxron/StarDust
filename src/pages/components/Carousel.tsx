@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Data from "../../../data/carouselData.json";
 import { ZodiacSign } from "../../../typing";
@@ -11,22 +11,35 @@ export default function Carousel() {
   const [clickedSign, setClickedSign] = useState("unclicked");
   const [clickedSummary, setClickedSummary] = useState("none");
   const [showCompatibilityButton, setShowCompatibilityButton] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
   const links = "/assets/signs/";
   const handleCompatibilityClick = () => {
     router.push(`/compatibility?sign=${clickedSign}`);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div
-      className="flex flex-col items-center justify-center font-josefine text-center"
+      className="pt-20 flex flex-col items-center justify-center font-josefine text-center"
       style={{
         minHeight: "80vh",
       }}
     >
       <div className="text-dark relative z-10">
         {clickedSign === "unclicked" ? (
-          <h1 className="text-3xl mb-4 text-white font-newYork">
-            Click to see each zodiac sign
+          <h1 className="text-xl sm:text-3xl mb-4 text-white font-newYork">
+            Click to see each zodiac details
           </h1>
         ) : (
           <>
@@ -49,15 +62,12 @@ export default function Carousel() {
       </div>
 
       <div
-        className="absolute flex items-center justify-center"
+        className="absolute flex items-center justify-center w-96 h-96 sm:w-128 sm:h-128"
         style={{
-          height: "37em",
-          width: "37em",
-          background: `${
-            clickedSign === "unclicked"
-              ? "radial-gradient(50% 50% at 50% 50%, #3B3170 8.28%, rgba(23, 18, 51, 0.54) 75%)"
-              : "radial-gradient(50% 50% at 50% 50%, #CDCBC0 0%, #CDCBC0 55%, rgba(205, 203, 192, 0.06) 100%)"
-          }`,
+          background: `${clickedSign === "unclicked"
+            ? "radial-gradient(50% 50% at 50% 50%, #3B3170 8.28%, rgba(23, 18, 51, 0.54) 75%)"
+            : "radial-gradient(50% 50% at 50% 50%, #CDCBC0 0%, #CDCBC0 55%, rgba(205, 203, 192, 0.06) 100%)"
+            }`,
           borderRadius: "100%",
         }}
       >
@@ -69,17 +79,16 @@ export default function Carousel() {
                 setShowCompatibilityButton(true);
             }}
             key={sign.id}
-            className="absolute w-16 h-16 transform origin-center transition-transform flex items-center justify-center cursor-pointer"
+            className="absolute w-10 h-10 sm:w-16 sm:h-16 transform origin-center transition-transform flex items-center justify-center cursor-pointer"
             style={{
               borderRadius: "50%",
-              transform: `rotate(${
-                (360 / 12) * index + 270
-              }deg) translateX(15em)`,
-              background: `${
-                clickedSign === sign.name
-                  ? "radial-gradient(#17123310,#CDCBC0)"
-                  : "radial-gradient(var(--color--dark), #f5df60100)"
-              }`,
+                 transform: `rotate(${(360 / 12) * index + 270}deg) translateX(${
+              isSmallScreen ? "10em" : "15em"
+            })`,
+              background: `${clickedSign === sign.name
+                ? "radial-gradient(#17123310,#CDCBC0)"
+                : "radial-gradient(var(--color--dark), #f5df60100)"
+                }`,
             }}
           >
             <Image
@@ -90,9 +99,10 @@ export default function Carousel() {
               alt={`Zodiac Sign ${sign.name}`}
               width="100"
               height="100"
-              className="w-8 h-auto hover:scale-110 transition-transform"
+              className="w-6 sm:w-8 h-auto hover:scale-110 transition-transform"
             />
           </div>
+
         ))}
       </div>
     </div>

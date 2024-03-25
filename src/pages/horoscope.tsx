@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState, createRef } from "react";
 import axios from "axios";
+import Head from "next/head";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer";
 import { capitalizeFirstLetter } from "@/utils/capitalLetter";
@@ -54,6 +55,12 @@ useEffect(() => {
 
 
   return (
+    <>
+    <Head>
+        <title>STARDUST | Your Horoscope</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+    </Head>
     <div className="bg-dark font-josefine">
       <Navbar />
       <div className="min-h-screen flex items-center justify-center gap-16">
@@ -82,6 +89,7 @@ useEffect(() => {
       </div>
       <Footer />
     </div>
+    </>
   );
 };
 

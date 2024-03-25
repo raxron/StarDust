@@ -7,7 +7,7 @@ export default function Footer() {
       <Link href="/">
         <Image src="/assets/logo/wordmark.svg" className='hover:scale-110 transition-transform' width={200} height={200} alt="wordmark" />
       </Link>
-      <h1 className='text-white'>Copyright © 2024 – All rights Reserved</h1>
+      <h1 className='text-white'>Copyright © 2024 – All Rights Reserved</h1>
     </div>
   );
 }

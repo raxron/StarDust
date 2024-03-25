@@ -1,4 +1,5 @@
 import React from "react";
+import Head from 'next/head'
 import { useRouter } from "next/router";
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer";
@@ -52,6 +53,12 @@ const Compatibility = () => {
   };
 
   return (
+    <>
+    <Head>
+        <title>STARDUST | Compatability</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+    </Head>
     <div className="bg-dark h-screen font-josefine">
       <Navbar />
       <div className="min-h-screen flex items-center justify-center gap-16">
@@ -62,6 +69,7 @@ const Compatibility = () => {
       </div>
       <Footer />
     </div>
+    </>
   );
 };
 
