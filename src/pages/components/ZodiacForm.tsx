@@ -169,6 +169,7 @@ const ZodiacForm = () => {
           }}
         >
           <div
+            className="mx-10"
             style={{
               width: "280px",
               height: "480px",
@@ -188,6 +189,7 @@ const ZodiacForm = () => {
             </div>
 
             <button
+            className="w-60"
               onClick={(e) => submitSign(e, zodiacSign)}
               style={{
                 backgroundColor: "#271F4F",
