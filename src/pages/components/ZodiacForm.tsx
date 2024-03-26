@@ -24,20 +24,6 @@ const ZodiacForm = () => {
       setZodiacSign(zodiacSign);
       setShowResult(true);
 
-      const horoscopeResponse = await axios.post(
-        `https://aztro.sameerkumar.website?sign=${zodiacSign.toLowerCase()}&day=today`
-      );
-
-      if (
-        horoscopeResponse.status === 200 &&
-        horoscopeResponse.data &&
-        horoscopeResponse.data.description
-      ) {
-        const { description } = horoscopeResponse.data;
-        setDescription(description);
-      } else {
-        console.error("Invalid or missing horoscope data:", horoscopeResponse);
-      }
     } catch (error) {
       console.error("Error fetching zodiac sign or horoscope:", error);
     }

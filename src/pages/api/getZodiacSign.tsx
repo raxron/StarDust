@@ -12,7 +12,6 @@ export default async function handler(
   const zodiacSign: string = (req.query?.zodiacSign as string) || '';
   
   try {
-
     const url = `https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=${encodeURIComponent(
       zodiacSign
     )}&day=TODAY`;
